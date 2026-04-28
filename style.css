@@ -371,6 +371,18 @@
   .hero-title .accent { color: var(--cyan); }
   .hero-title .gold { color: var(--gold); }
 
+  .hero-kicker {
+    font-family: var(--display);
+    font-size: clamp(1rem, 2vw, 1.35rem);
+    font-weight: 700;
+    line-height: 1.35;
+    color: var(--gold);
+    margin-top: 1rem;
+    letter-spacing: .04em;
+    opacity: 0;
+    animation: fadeUp .6s .45s forwards;
+  }
+
   .hero-sub {
     font-size: 1.05rem; color: var(--text-dim);
     margin-top: 1.25rem; max-width: 46ch;
