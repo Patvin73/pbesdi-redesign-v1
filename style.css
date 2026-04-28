@@ -514,7 +514,21 @@
     border: 1px solid rgba(255,201,77,0.2);
     border-left: 3px solid var(--gold);
     padding: 1.25rem 1.5rem;
-    display: flex; align-items: flex-start; gap: 1rem;
+    display: flex; flex-direction: column; align-items: flex-start; gap: .9rem;
+  }
+  .ketua-avatar {
+    width: 88px; height: 88px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    flex: 0 0 88px;
+    background: linear-gradient(135deg, rgba(255,201,77,0.22), rgba(0,229,255,0.08));
+    border: 2px solid rgba(255,201,77,0.38);
+    box-shadow: 0 0 24px rgba(255,201,77,0.12);
+    overflow: hidden;
+  }
+  .ketua-avatar img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    display: block;
   }
   .ketua-info { }
   .ketua-name {
@@ -918,4 +932,8 @@
   @media (max-width: 600px) {
     .services-grid { grid-template-columns: 1fr; }
     .team-grid { grid-template-columns: 1fr; }
+    .about-ketua { padding: 1rem; }
+    .ketua-avatar {
+      width: 72px; height: 72px; flex-basis: 72px;
+    }
   }
