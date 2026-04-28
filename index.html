@@ -1,570 +1,946 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="id">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>PBESDI &mdash; Esport Domino Indonesia</title>
-<link rel="icon" href="favicon.ico" sizes="any">
-<link rel="apple-touch-icon" sizes="180x180" href="assets/image/apple-touch-icon.png">
-<link rel="manifest" href="site.webmanifest">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Orbitron:wght@400;700;900&family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PBESDI &mdash; Esport Domino Indonesia</title>
+  <link rel="icon" href="favicon.ico" sizes="any" />
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/image/apple-touch-icon.png" />
+  <link rel="manifest" href="site.webmanifest" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Orbitron:wght@400;700;900&family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
+  <div class="scan-overlay"></div>
 
-<div class="scan-overlay"></div>
+  <!-- ══ NAVIGATION ══════════════════════════════════════════════ -->
+  <nav id="main-nav">
+    <div class="nav-progress" id="nav-progress"></div>
+    <div class="nav-inner">
+      <a href="#hero" class="nav-logo">
+        <img class="logo-badge" src="assets/image/android-chrome-192x192.png" alt="PBESDI logo" width="40"
+          height="40" />
+        Esport Domino Indonesia
+      </a>
+      <ul class="nav-links">
+        <li><a href="#about">Tentang</a></li>
+        <li><a href="#services">Kompetisi</a></li>
+        <li><a href="#team">Pengurus</a></li>
+        <li><a href="#articles">Artikel</a></li>
+        <li><a href="#contact">Kontak</a></li>
+      </ul>
+      <div class="nav-right">
+        <button class="nav-cta" onclick="
+              document
+                .getElementById('register')
+                .scrollIntoView({ behavior: 'smooth' })
+            ">
+          Daftar Sekarang
+        </button>
+        <button class="nav-hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
 
-<!-- ══ NAVIGATION ══════════════════════════════════════════════ -->
-<nav id="main-nav">
-  <div class="nav-progress" id="nav-progress"></div>
-  <div class="nav-inner">
-    <a href="#hero" class="nav-logo">
-      <img class="logo-badge" src="assets/image/android-chrome-192x192.png" alt="PBESDI logo" width="40" height="40">
-      Esport Domino Indonesia
-    </a>
-    <ul class="nav-links">
+  <!-- Mobile Drawer -->
+  <div class="mobile-menu" id="mobile-menu" role="dialog" aria-label="Navigation menu">
+    <ul class="mobile-nav-links">
       <li><a href="#about">Tentang</a></li>
       <li><a href="#services">Kompetisi</a></li>
       <li><a href="#team">Pengurus</a></li>
       <li><a href="#articles">Artikel</a></li>
       <li><a href="#contact">Kontak</a></li>
     </ul>
-    <div class="nav-right">
-      <button class="nav-cta" onclick="document.getElementById('register').scrollIntoView({behavior:'smooth'})">Daftar Sekarang</button>
-      <button class="nav-hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
+    <button class="mobile-nav-cta" onclick="
+          document
+            .getElementById('register')
+            .scrollIntoView({ behavior: 'smooth' });
+          closeMobileMenu();
+        ">
+      Daftar Sekarang
+    </button>
+    <div class="mobile-menu-footer">
+      pbesdi.com &nbsp;&bull;&nbsp; admin@pbesdi.com &nbsp;&bull;&nbsp;
+      0821&ndash;3153&ndash;1547
     </div>
   </div>
-</nav>
 
-<!-- Mobile Drawer -->
-<div class="mobile-menu" id="mobile-menu" role="dialog" aria-label="Navigation menu">
-  <ul class="mobile-nav-links">
-    <li><a href="#about">Tentang</a></li>
-    <li><a href="#services">Kompetisi</a></li>
-    <li><a href="#team">Pengurus</a></li>
-    <li><a href="#articles">Artikel</a></li>
-    <li><a href="#contact">Kontak</a></li>
-  </ul>
-  <button class="mobile-nav-cta" onclick="document.getElementById('register').scrollIntoView({behavior:'smooth'}); closeMobileMenu();">
-    Daftar Sekarang
-  </button>
-  <div class="mobile-menu-footer">pbesdi.com &nbsp;&bull;&nbsp; admin@pbesdi.com &nbsp;&bull;&nbsp; 0821&ndash;3153&ndash;1547</div>
-</div>
-
-<!-- ══ HERO ════════════════════════════════════════════════════ -->
-<section id="hero">
-  <div class="hero-bg"></div>
-  <div class="hero-grid"></div>
-  <div class="hero-content">
-    <div>
-      <div class="hero-eyebrow">
-        <span class="dot"></span>
-        Asosiasi E-sport Nasional &mdash; Resmi &amp; Terverifikasi
+  <!-- ══ HERO ════════════════════════════════════════════════════ -->
+  <section id="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-grid"></div>
+    <div class="hero-content">
+      <div>
+        <div class="hero-eyebrow">
+          <span class="dot"></span>
+          Asosiasi E-sport Nasional &mdash; Resmi &amp; Terverifikasi
+        </div>
+        <h1 class="hero-title">
+          Esport <span class="accent">Domino</span><br />
+          <span class="gold">Indonesia</span><br />
+          PBESDI
+        </h1>
+        <p class="hero-sub">
+          Organisasi profesional yang bergerak di bidang pengembangan,
+          penyelenggaraan, dan pembinaan kompetisi eSport berbasis permainan
+          domino di seluruh Nusantara. Bersatu. Bersaing. Berprestasi.
+        </p>
+        <div class="hero-tag-row">
+          <span class="hero-tag">Grand Prix</span>
+          <span class="hero-tag">Liga Nasional</span>
+          <span class="hero-tag">Online Series</span>
+          <span class="hero-tag">Pembinaan Atlet</span>
+        </div>
+        <div class="hero-actions">
+          <button class="btn-primary" onclick="
+                document
+                  .getElementById('register')
+                  .scrollIntoView({ behavior: 'smooth' })
+              ">
+            Bergabung Sekarang
+          </button>
+          <button class="btn-ghost" onclick="
+                document
+                  .getElementById('about')
+                  .scrollIntoView({ behavior: 'smooth' })
+              ">
+            Pelajari Lebih Lanjut
+          </button>
+        </div>
       </div>
-      <h1 class="hero-title">
-        Esport <span class="accent">Domino</span><br>
-        <span class="gold">Indonesia</span><br>
-        PBESDI
-      </h1>
-      <p class="hero-sub">
-        Organisasi profesional yang bergerak di bidang pengembangan, penyelenggaraan,
-        dan pembinaan kompetisi eSport berbasis permainan domino di seluruh Nusantara.
-        Bersatu. Bersaing. Berprestasi.
+
+      <div class="hero-hud">
+        <div class="hero-hud-panel">
+          <div class="hud-label">// Community Status</div>
+          <div class="hud-big">5<span>K</span></div>
+          <div class="hud-desc">Anggota Terdaftar Aktif</div>
+        </div>
+        <div class="hud-row">
+          <div class="hud-mini">
+            <div class="hud-mini-val">98%</div>
+            <div class="hud-mini-label">Positive Result</div>
+          </div>
+          <div class="hud-mini">
+            <div class="hud-mini-val" style="color: var(--cyan)">100%</div>
+            <div class="hud-mini-label">Satu-satunya Induk</div>
+          </div>
+        </div>
+        <div style="
+              margin-top: 1px;
+              background: rgba(0, 229, 255, 0.04);
+              border: 1px solid rgba(0, 229, 255, 0.1);
+              padding: 1rem 1.25rem;
+            ">
+          <div style="
+                font-family: var(--display);
+                font-size: 0.5rem;
+                letter-spacing: 0.15em;
+                color: var(--text-dim);
+                text-transform: uppercase;
+                margin-bottom: 0.5rem;
+              ">
+            // Legal ID
+          </div>
+          <div style="
+                font-family: var(--heading);
+                font-weight: 700;
+                font-size: 0.85rem;
+                color: var(--white);
+              ">
+            NIB: 2407250002436
+          </div>
+          <div style="
+                font-family: var(--display);
+                font-size: 0.55rem;
+                color: var(--cyan);
+                margin-top: 0.25rem;
+                letter-spacing: 0.05em;
+              ">
+            MENKEH: 4025072331107897
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ STATS ═══════════════════════════════════════════════════ -->
+  <section id="stats">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-item">
+          <div class="stat-num">5<span>K+</span></div>
+          <div class="stat-label">Anggota Komunitas</div>
+          <div class="stat-desc">
+            Pemain domino digital di seluruh Indonesia
+          </div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">98<span>%</span></div>
+          <div class="stat-label">Kepuasan Anggota</div>
+          <div class="stat-desc">
+            Platform kompetitif yang adil dan transparan
+          </div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num" style="color: var(--gold)">
+            1<span style="color: var(--gold)">st</span>
+          </div>
+          <div class="stat-label">Induk Organisasi</div>
+          <div class="stat-desc">
+            Satu-satunya asosiasi resmi eSport Domino nasional
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ ABOUT ════════════════════════════════════════════════════ -->
+  <section id="about" class="section">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-text">
+          <div class="label">// Tentang PBESDI</div>
+          <h2 class="section-title">
+            Membangun <span>Ekosistem</span> eSport Domino Nasional
+          </h2>
+          <p>
+            <strong>eSPORT DOMINO INDONESIA (eSDI)</strong> adalah organisasi
+            profesional yang bergerak di bidang pengembangan, penyelenggaraan,
+            dan pembinaan kompetisi eSport berbasis permainan domino di
+            Indonesia.
+          </p>
+          <p>
+            Kami hadir untuk menjawab kebutuhan akan wadah yang profesional,
+            sportif, dan terstruktur bagi para pemain domino digital di
+            seluruh Nusantara. Dengan dukungan teknologi, komunitas, dan
+            semangat kompetisi sehat, eSDI bertujuan menjadikan permainan
+            domino sebagai eSport nasional yang membanggakan dan berdaya saing
+            global.
+          </p>
+          <div class="about-ketua">
+            <div class="ketua-info">
+              <div class="ketua-name">Irwanto Ibrahim</div>
+              <div class="ketua-title">Ketua Umum PBESDI</div>
+              <div class="ketua-quote">
+                &ldquo;Sebagai legenda di permainan domino dan bermain di
+                beberapa provinsi, bertekad untuk menyeragamkan aturan. Sarana
+                eSPORT adalah cara yang cepat dan tepat untuk mewujudkan
+                keinginan tersebut.&rdquo;
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <div class="legalitas-panel">
+            <div class="legal-row">
+              <div class="legal-key">Badan Hukum</div>
+              <div class="legal-val">PT eSport Domino Indonesia</div>
+            </div>
+            <div class="legal-row">
+              <div class="legal-key">NIB</div>
+              <div class="legal-val">2407250002436</div>
+            </div>
+            <div class="legal-row">
+              <div class="legal-key">NPWP</div>
+              <div class="legal-val">1000 0000 0439 8430</div>
+            </div>
+            <div class="legal-row">
+              <div class="legal-key">Diskominfo</div>
+              <div class="legal-val" style="font-size: 0.8rem">
+                240725000243600000001
+              </div>
+            </div>
+            <div class="legal-row">
+              <div class="legal-key">Menkeh</div>
+              <div class="legal-val">4025072331107897</div>
+            </div>
+            <div class="legal-row">
+              <div class="legal-key">Afiliasi</div>
+              <div class="legal-val">PBESI / Asosiasi Terkait</div>
+            </div>
+            <div class="verified-badge">
+              Transparansi &amp; Kredibilitas Terjamin
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ VISION & MISSION ═════════════════════════════════════════ -->
+  <section id="vision" class="section">
+    <div class="container">
+      <div class="label">// Arah Organisasi</div>
+      <h2 class="section-title" style="margin-bottom: 2.5rem">
+        Visi &amp; <span>Misi</span>
+      </h2>
+      <div class="vision-grid">
+        <div class="vision-card visi">
+          <div class="vision-card-head">// Visi</div>
+          <p class="vision-body">
+            Menjadi pelopor dan pemimpin dalam industri eSport domino di
+            <strong>Indonesia</strong> dan
+            <strong>Asia Tenggara</strong> &mdash; memperkenalkan domino
+            sebagai olahraga digital yang diakui, profesional, dan berdaya
+            saing global.
+          </p>
+        </div>
+        <div class="vision-card misi">
+          <div class="vision-card-head">// Misi</div>
+          <ul class="mission-list">
+            <li data-n="01">
+              Meningkatkan eksistensi permainan domino sebagai eSport yang
+              profesional dan kompetitif.
+            </li>
+            <li data-n="02">
+              Menyelenggarakan turnamen domino berskala lokal, nasional, dan
+              internasional.
+            </li>
+            <li data-n="03">
+              Membina dan mendukung atlet-atlet eSport domino Indonesia.
+            </li>
+            <li data-n="04">
+              Membangun ekosistem digital yang sehat, inklusif, dan
+              berkelanjutan.
+            </li>
+            <li data-n="05">
+              Bekerja sama dengan developer game, sponsor, media, dan
+              komunitas.
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ SERVICES ═════════════════════════════════════════════════ -->
+  <section id="services" class="section">
+    <div class="container">
+      <div class="label">// Kompetisi &amp; Program</div>
+      <h2 class="section-title">Layanan &amp; <span>Kegiatan Utama</span></h2>
+      <p style="color: var(--text-dim); margin-top: 0.75rem; max-width: 60ch">
+        Temukan berbagai layanan dan kegiatan utama yang menjadi fokus
+        pengembangan komunitas dan kompetisi e-sport kami.
       </p>
-      <div class="hero-tag-row">
-        <span class="hero-tag">Grand Prix</span>
-        <span class="hero-tag">Liga Nasional</span>
-        <span class="hero-tag">Online Series</span>
-        <span class="hero-tag">Pembinaan Atlet</span>
-      </div>
-      <div class="hero-actions">
-        <button class="btn-primary" onclick="document.getElementById('register').scrollIntoView({behavior:'smooth'})">Bergabung Sekarang</button>
-        <button class="btn-ghost" onclick="document.getElementById('about').scrollIntoView({behavior:'smooth'})">Pelajari Lebih Lanjut</button>
-      </div>
-    </div>
-
-    <div class="hero-hud">
-      <div class="hero-hud-panel">
-        <div class="hud-label">// Community Status</div>
-        <div class="hud-big">5<span>K</span></div>
-        <div class="hud-desc">Anggota Terdaftar Aktif</div>
-      </div>
-      <div class="hud-row">
-        <div class="hud-mini">
-          <div class="hud-mini-val">98%</div>
-          <div class="hud-mini-label">Positive Result</div>
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M8 21l4-8 4 8M12 3v10" />
+              <circle cx="12" cy="3" r="2" />
+            </svg>
+          </div>
+          <div class="service-title">Turnamen &amp; Liga Resmi</div>
+          <div class="service-desc">
+            Menyelenggarakan Grand Prix, Liga Nasional, dan Online Series
+            dengan sistem kompetisi terstruktur dan berhadiah.
+          </div>
         </div>
-        <div class="hud-mini">
-          <div class="hud-mini-val" style="color:var(--cyan);">100%</div>
-          <div class="hud-mini-label">Satu-satunya Induk</div>
+        <div class="service-card">
+          <div class="service-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <rect x="3" y="3" width="18" height="18" rx="2" />
+              <path d="M3 9h18M9 21V9" />
+            </svg>
+          </div>
+          <div class="service-title">Sistem Pairing</div>
+          <div class="service-desc">
+            Memudahkan setiap atlet dalam penginputan score dan pengelolaan
+            bagan turnamen secara digital dan transparan.
+          </div>
         </div>
-      </div>
-      <div style="margin-top:1px; background:rgba(0,229,255,0.04); border:1px solid rgba(0,229,255,0.1); padding:1rem 1.25rem;">
-        <div style="font-family:var(--display);font-size:.5rem;letter-spacing:.15em;color:var(--text-dim);text-transform:uppercase;margin-bottom:.5rem;">// Legal ID</div>
-        <div style="font-family:var(--heading);font-weight:700;font-size:.85rem;color:var(--white);">NIB: 2407250002436</div>
-        <div style="font-family:var(--display);font-size:.55rem;color:var(--cyan);margin-top:.25rem;letter-spacing:.05em;">MENKEH: 4025072331107897</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ══ STATS ═══════════════════════════════════════════════════ -->
-<section id="stats">
-  <div class="container">
-    <div class="stats-grid">
-      <div class="stat-item">
-        <div class="stat-num">5<span>K+</span></div>
-        <div class="stat-label">Anggota Komunitas</div>
-        <div class="stat-desc">Pemain domino digital di seluruh Indonesia</div>
-      </div>
-      <div class="stat-item">
-        <div class="stat-num">98<span>%</span></div>
-        <div class="stat-label">Kepuasan Anggota</div>
-        <div class="stat-desc">Platform kompetitif yang adil dan transparan</div>
-      </div>
-      <div class="stat-item">
-        <div class="stat-num" style="color:var(--gold);">1<span style="color:var(--gold);">st</span></div>
-        <div class="stat-label">Induk Organisasi</div>
-        <div class="stat-desc">Satu-satunya asosiasi resmi eSport Domino nasional</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ══ ABOUT ════════════════════════════════════════════════════ -->
-<section id="about" class="section">
-  <div class="container">
-    <div class="about-grid">
-      <div class="about-text">
-        <div class="label">// Tentang PBESDI</div>
-        <h2 class="section-title">Membangun <span>Ekosistem</span> eSport Domino Nasional</h2>
-        <p>
-          <strong>eSPORT DOMINO INDONESIA (eSDI)</strong> adalah organisasi profesional yang bergerak
-          di bidang pengembangan, penyelenggaraan, dan pembinaan kompetisi eSport berbasis permainan
-          domino di Indonesia.
-        </p>
-        <p>
-          Kami hadir untuk menjawab kebutuhan akan wadah yang profesional, sportif, dan terstruktur
-          bagi para pemain domino digital di seluruh Nusantara. Dengan dukungan teknologi, komunitas,
-          dan semangat kompetisi sehat, eSDI bertujuan menjadikan permainan domino sebagai eSport
-          nasional yang membanggakan dan berdaya saing global.
-        </p>
-        <div class="about-ketua">
-          <div class="ketua-info">
-            <div class="ketua-name">Irwanto Ibrahim</div>
-            <div class="ketua-title">Ketua Umum PBESDI</div>
-            <div class="ketua-quote">&ldquo;Sebagai legenda di permainan domino dan bermain di beberapa provinsi,
-            bertekad untuk menyeragamkan aturan. Sarana eSPORT adalah cara yang cepat
-            dan tepat untuk mewujudkan keinginan tersebut.&rdquo;</div>
+        <div class="service-card">
+          <div class="service-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+            </svg>
+          </div>
+          <div class="service-title">Pembinaan &amp; Pelatihan Atlet</div>
+          <div class="service-desc">
+            Program pelatihan intensif untuk pemain domino digital berbakat
+            guna mencapai performa kompetitif tertinggi.
+          </div>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+              <circle cx="9" cy="7" r="4" />
+              <path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75" />
+            </svg>
+          </div>
+          <div class="service-title">Kemitraan Platform &amp; Developer</div>
+          <div class="service-desc">
+            Kolaborasi strategis dengan aplikasi dan game domino dalam sistem
+            kompetisi resmi berskala nasional.
+          </div>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path
+                d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 0 0 1.946-.806 3.42 3.42 0 0 1 4.438 0 3.42 3.42 0 0 0 1.946.806 3.42 3.42 0 0 1 3.138 3.138 3.42 3.42 0 0 0 .806 1.946 3.42 3.42 0 0 1 0 4.438 3.42 3.42 0 0 0-.806 1.946 3.42 3.42 0 0 1-3.138 3.138 3.42 3.42 0 0 0-1.946.806 3.42 3.42 0 0 1-4.438 0 3.42 3.42 0 0 0-1.946-.806 3.42 3.42 0 0 1-3.138-3.138 3.42 3.42 0 0 0-.806-1.946 3.42 3.42 0 0 1 0-4.438 3.42 3.42 0 0 0 .806-1.946 3.42 3.42 0 0 1 3.138-3.138z" />
+            </svg>
+          </div>
+          <div class="service-title">Sertifikasi &amp; Peringkat Atlet</div>
+          <div class="service-desc">
+            Sistem ranking nasional dan sertifikasi resmi bagi pemain dan tim
+            profesional eSport domino Indonesia.
+          </div>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path
+                d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" />
+            </svg>
+          </div>
+          <div class="service-title">Event Management &amp; Sponsorship</div>
+          <div class="service-desc">
+            Penyelenggaraan event eSport domino untuk pihak ketiga dan brand
+            activation dengan jangkauan komunitas nasional.
           </div>
         </div>
       </div>
-
-      <div>
-        <div class="legalitas-panel">
-          <div class="legal-row">
-            <div class="legal-key">Badan Hukum</div>
-            <div class="legal-val">PT eSport Domino Indonesia</div>
-          </div>
-          <div class="legal-row">
-            <div class="legal-key">NIB</div>
-            <div class="legal-val">2407250002436</div>
-          </div>
-          <div class="legal-row">
-            <div class="legal-key">NPWP</div>
-            <div class="legal-val">1000 0000 0439 8430</div>
-          </div>
-          <div class="legal-row">
-            <div class="legal-key">Diskominfo</div>
-            <div class="legal-val" style="font-size:.8rem;">240725000243600000001</div>
-          </div>
-          <div class="legal-row">
-            <div class="legal-key">Menkeh</div>
-            <div class="legal-val">4025072331107897</div>
-          </div>
-          <div class="legal-row">
-            <div class="legal-key">Afiliasi</div>
-            <div class="legal-val">PBESI / Asosiasi Terkait</div>
-          </div>
-          <div class="verified-badge">Transparansi &amp; Kredibilitas Terjamin</div>
-        </div>
-      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- ══ VISION & MISSION ═════════════════════════════════════════ -->
-<section id="vision" class="section">
-  <div class="container">
-    <div class="label">// Arah Organisasi</div>
-    <h2 class="section-title" style="margin-bottom:2.5rem;">Visi &amp; <span>Misi</span></h2>
-    <div class="vision-grid">
-      <div class="vision-card visi">
-        <div class="vision-card-head">// Visi</div>
-        <p class="vision-body">
-          Menjadi pelopor dan pemimpin dalam industri eSport domino di <strong>Indonesia</strong> dan
-          <strong>Asia Tenggara</strong> &mdash; memperkenalkan domino sebagai olahraga digital yang
-          diakui, profesional, dan berdaya saing global.
-        </p>
-      </div>
-      <div class="vision-card misi">
-        <div class="vision-card-head">// Misi</div>
-        <ul class="mission-list">
-          <li data-n="01">Meningkatkan eksistensi permainan domino sebagai eSport yang profesional dan kompetitif.</li>
-          <li data-n="02">Menyelenggarakan turnamen domino berskala lokal, nasional, dan internasional.</li>
-          <li data-n="03">Membina dan mendukung atlet-atlet eSport domino Indonesia.</li>
-          <li data-n="04">Membangun ekosistem digital yang sehat, inklusif, dan berkelanjutan.</li>
-          <li data-n="05">Bekerja sama dengan developer game, sponsor, media, dan komunitas.</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ══ SERVICES ═════════════════════════════════════════════════ -->
-<section id="services" class="section">
-  <div class="container">
-    <div class="label">// Kompetisi &amp; Program</div>
-    <h2 class="section-title">Layanan &amp; <span>Kegiatan Utama</span></h2>
-    <p style="color:var(--text-dim);margin-top:.75rem;max-width:60ch;">Temukan berbagai layanan dan kegiatan utama yang menjadi fokus pengembangan komunitas dan kompetisi e-sport kami.</p>
-    <div class="services-grid">
-      <div class="service-card">
-        <div class="service-icon">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 21l4-8 4 8M12 3v10"/><circle cx="12" cy="3" r="2"/></svg>
-        </div>
-        <div class="service-title">Turnamen &amp; Liga Resmi</div>
-        <div class="service-desc">Menyelenggarakan Grand Prix, Liga Nasional, dan Online Series dengan sistem kompetisi terstruktur dan berhadiah.</div>
-      </div>
-      <div class="service-card">
-        <div class="service-icon">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
-        </div>
-        <div class="service-title">Sistem Pairing</div>
-        <div class="service-desc">Memudahkan setiap atlet dalam penginputan score dan pengelolaan bagan turnamen secara digital dan transparan.</div>
-      </div>
-      <div class="service-card">
-        <div class="service-icon">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-        </div>
-        <div class="service-title">Pembinaan &amp; Pelatihan Atlet</div>
-        <div class="service-desc">Program pelatihan intensif untuk pemain domino digital berbakat guna mencapai performa kompetitif tertinggi.</div>
-      </div>
-      <div class="service-card">
-        <div class="service-icon">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-        </div>
-        <div class="service-title">Kemitraan Platform &amp; Developer</div>
-        <div class="service-desc">Kolaborasi strategis dengan aplikasi dan game domino dalam sistem kompetisi resmi berskala nasional.</div>
-      </div>
-      <div class="service-card">
-        <div class="service-icon">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 0 0 1.946-.806 3.42 3.42 0 0 1 4.438 0 3.42 3.42 0 0 0 1.946.806 3.42 3.42 0 0 1 3.138 3.138 3.42 3.42 0 0 0 .806 1.946 3.42 3.42 0 0 1 0 4.438 3.42 3.42 0 0 0-.806 1.946 3.42 3.42 0 0 1-3.138 3.138 3.42 3.42 0 0 0-1.946.806 3.42 3.42 0 0 1-4.438 0 3.42 3.42 0 0 0-1.946-.806 3.42 3.42 0 0 1-3.138-3.138 3.42 3.42 0 0 0-.806-1.946 3.42 3.42 0 0 1 0-4.438 3.42 3.42 0 0 0 .806-1.946 3.42 3.42 0 0 1 3.138-3.138z"/></svg>
-        </div>
-        <div class="service-title">Sertifikasi &amp; Peringkat Atlet</div>
-        <div class="service-desc">Sistem ranking nasional dan sertifikasi resmi bagi pemain dan tim profesional eSport domino Indonesia.</div>
-      </div>
-      <div class="service-card">
-        <div class="service-icon">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
-        </div>
-        <div class="service-title">Event Management &amp; Sponsorship</div>
-        <div class="service-desc">Penyelenggaraan event eSport domino untuk pihak ketiga dan brand activation dengan jangkauan komunitas nasional.</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ══ TEAM ════════════════════════════════════════════════════ -->
-<section id="team" class="section">
-  <div class="container">
-    <div class="label">// Pengurus eSDI</div>
-    <h2 class="section-title">Kenali <span>Tim</span> Kami</h2>
-    <p style="color:var(--text-dim);margin-top:.75rem;margin-bottom:0;max-width:60ch;">Para profesional di balik layar yang berkomitmen membangun ekosistem e-sport domino Indonesia.</p>
-    <div class="team-grid">
-
-      <div class="team-card">
-        <div class="team-card-scanline"></div>
-        <div class="team-avatar">BI</div>
-        <div class="team-name">Brigjen TNI (Purn) Edi Imran, S.H.,M.H</div>
-        <div class="team-quote">&ldquo;Jelajahi potensi tak terbatas Domino sebagai eSport! eSPORT DOMINO INDONESIA membuka pintu bagi talenta-talenta terbaik untuk bersaing, berkembang, dan menorehkan prestasi.&rdquo;</div>
-      </div>
-
-      <div class="team-card">
-        <div class="team-card-scanline"></div>
-        <div class="team-avatar">KT</div>
-        <div class="team-name">Kolonel Sus Tommy Herry Doringin, S.Th.,Rm</div>
-        <div class="team-quote">&ldquo;Kami terus berkomitmen untuk menghadirkan platform kompetitif yang adil, transparan, dan menyenangkan bagi seluruh pecinta domino di Indonesia.&rdquo;</div>
-      </div>
-
-      <div class="team-card">
-        <div class="team-card-scanline"></div>
-        <div class="team-avatar">BK</div>
-        <div class="team-name">Bobby Kodrat Dannyal, S.E</div>
-        <div class="team-quote">&ldquo;Dengan dimulainya musim kompetisi baru berbasis digital, eSPORT DOMINO INDONESIA siap memberikan pengalaman bermain yang lebih seru, kompetitif, dan terstruktur.&rdquo;</div>
-      </div>
-
-      <div class="team-card">
-        <div class="team-card-scanline"></div>
-        <div class="team-avatar">MU</div>
-        <div class="team-name">Muflihuddin, S.E</div>
-        <div class="team-quote">&ldquo;Kami berkomitmen membangun ekosistem eSports yang kompetitif, sehat, dan inklusif&mdash;di mana domino yang berakar budaya kuat menjadi panggung prestasi nasional dan internasional.&rdquo;</div>
-      </div>
-
-      <div class="team-card">
-        <div class="team-card-scanline"></div>
-        <div class="team-avatar">MY</div>
-        <div class="team-name">M Yusran Fajar, S.H.,M.H</div>
-        <div class="team-quote">&ldquo;Olahraga Domino di Indonesia merupakan perwujudan nilai-nilai tradisi yang nyata. Kami menghimpun eSPORT Domino Indonesia berlandaskan Pancasila dan UUD 1945.&rdquo;</div>
-      </div>
-
-      <div class="team-card">
-        <div class="team-card-scanline"></div>
-        <div class="team-avatar">MF</div>
-        <div class="team-name">Muhammad Fadel Ibrahim</div>
-        <div class="team-quote">&ldquo;eSPORT DOMINO INDONESIA bukan sekadar platform permainan, tapi wadah berkumpulnya talenta lokal dan pelaku industri yang percaya domino bisa menjadi simbol kekuatan esport nasional.&rdquo;</div>
-      </div>
-
-      <div class="team-card">
-        <div class="team-card-scanline"></div>
-        <div class="team-avatar">AF</div>
-        <div class="team-name">Dr. Ahmad Fuad Zainuddin, M.Si</div>
-        <div class="team-quote">&ldquo;Sebagai pelopor eSport Domino, kami hadir mengangkat standar kompetisi dan profesionalisme&mdash;memperkenalkan keunikan matematika dalam 28 kartu dan 168 biji domino.&rdquo;</div>
-      </div>
-
-      <div class="team-card">
-        <div class="team-card-scanline"></div>
-        <div class="team-avatar">IK</div>
-        <div class="team-name">Ir. Muh Kamsul</div>
-        <div class="team-quote">&ldquo;Dari rekreasi hingga kompetisi tingkat tinggi, eSPORT DOMINO INDONESIA adalah rumah bagi semua pecinta Domino. Kami menyelenggarakan turnamen dan memajukan ekosistem eSport.&rdquo;</div>
-      </div>
-
-      <div class="team-card">
-        <div class="team-card-scanline"></div>
-        <div class="team-avatar">AA</div>
-        <div class="team-name">Arie Sofyan Asiz, S.T</div>
-        <div class="team-quote">&ldquo;eSPORT DOMINO INDONESIA: Membangun komunitas eSport Domino yang dinamis dan kompetitif, menghadirkan pengalaman bermain terbaik bagi para penggemar di seluruh Indonesia.&rdquo;</div>
-      </div>
-
-      <div class="team-card">
-        <div class="team-card-scanline"></div>
-        <div class="team-avatar">MFI</div>
-        <div class="team-name">Muhammad Fachrian Ibrahim</div>
-        <div class="team-quote">&ldquo;Domino sudah menjadi bagian dari keseharian masyarakat kita, dan melalui eSport, kami ingin membawa permainan ini ke level profesional dan diakui secara nasional maupun global.&rdquo;</div>
-      </div>
-
-      <div class="team-card">
-        <div class="team-card-scanline"></div>
-        <div class="team-avatar">DJ</div>
-        <div class="team-name">Drs. Jamaluddin</div>
-        <div class="team-quote">&ldquo;Kami membangun eSport Domino Indonesia dengan keyakinan bahwa game lokal seperti domino punya potensi besar&mdash;membangun ekosistem digital yang inklusif dari pelosok desa hingga kota besar.&rdquo;</div>
-      </div>
-
-      <div class="team-card" style="background:rgba(0,229,255,0.04);border-color:rgba(0,229,255,0.2);display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:180px;">
-        <div style="font-family:var(--display);font-size:.55rem;letter-spacing:.15em;color:var(--cyan);text-transform:uppercase;margin-bottom:.5rem;">// Bergabung</div>
-        <div style="font-family:var(--heading);font-weight:700;font-size:.9rem;color:var(--white);text-align:center;margin-bottom:1rem;">Jadilah Bagian<br>dari Tim kami</div>
-        <button class="btn-primary" style="font-size:.55rem;padding:.6rem 1.2rem;" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Hubungi Kami</button>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- ══ ARTICLES ══════════════════════════════════════════════════ -->
-<section id="articles" class="section">
-  <div class="container">
-    <div class="label">// Info Terkini</div>
-    <h2 class="section-title">Artikel &amp; <span>Berita</span></h2>
-    <p style="color:var(--text-dim);margin-top:.75rem;max-width:60ch;">Dapatkan informasi penting seputar pertandingan, turnamen nasional, serta kegiatan offline maupun online.</p>
-    <div class="articles-grid">
-      <a href="https://www.pbesdi.com/esport-indonesia-resmi/" target="_blank" class="article-card">
-        <div class="article-img">&#x25A0;</div>
-        <div class="article-body">
-          <div class="article-date">22 Juli 2025</div>
-          <div class="article-title">Esport Indonesia Resmi: PBESDI sebagai Asosiasi eSport Domino Nasional</div>
-          <span class="article-tag">Resmi</span>
-        </div>
-      </a>
-      <a href="https://www.pbesdi.com/asosiasi-e-sport-nasional/" target="_blank" class="article-card">
-        <div class="article-img">&#x25A0;</div>
-        <div class="article-body">
-          <div class="article-date">22 Juli 2025</div>
-          <div class="article-title">Asosiasi E-sport Nasional: Visi PBESDI untuk eSport Domino Indonesia</div>
-          <span class="article-tag">Asosiasi</span>
-        </div>
-      </a>
-    </div>
-    <div style="text-align:center;margin-top:2.5rem;">
-      <a href="https://www.pbesdi.com" target="_blank" class="btn-ghost" style="display:inline-block;padding:.75rem 2rem;border:1px solid rgba(0,229,255,0.3);color:var(--text-dim);font-family:var(--display);font-size:.65rem;letter-spacing:.12em;text-transform:uppercase;transition:border-color .2s,color .2s;">
-        Lihat Semua Artikel &rarr;
-      </a>
-    </div>
-  </div>
-</section>
-
-<!-- ══ REGISTER CTA ══════════════════════════════════════════════ -->
-<section id="register" class="section">
-  <div class="container">
-    <div class="register-inner">
-      <div class="register-glow"></div>
-      <div class="label" style="justify-content:center;">// Pendaftaran Anggota &amp; Komunitas Regional</div>
-      <h2 class="register-title">Bergabung dengan <span style="color:var(--cyan);">Komunitas</span> Terbesar</h2>
-      <p class="register-sub">
-        Jadilah bagian dari jaringan komunitas eSport terbesar di Indonesia. Daftarkan dirimu sekarang
-        untuk mendapatkan akses ke berbagai kegiatan, turnamen, dan pembinaan eksklusif di wilayahmu!
+  <!-- ══ TEAM ════════════════════════════════════════════════════ -->
+  <section id="team" class="section">
+    <div class="container">
+      <div class="label">// Pengurus eSDI</div>
+      <h2 class="section-title">MEET <span>TEAM</span> ESDI</h2>
+      <p style="
+            color: var(--text-dim);
+            margin-top: 0.75rem;
+            margin-bottom: 0;
+            max-width: 60ch;
+          ">
+        Para profesional di balik layar yang berkomitmen membangun ekosistem
+        e-sport domino Indonesia.
       </p>
-      <div class="register-stats">
-        <div class="reg-stat"><span class="reg-stat-val">5K+</span><span class="reg-stat-label">Member Aktif</span></div>
-        <div class="reg-stat"><span class="reg-stat-val" style="color:var(--gold);">34</span><span class="reg-stat-label">Provinsi</span></div>
-        <div class="reg-stat"><span class="reg-stat-val">&#x221E;</span><span class="reg-stat-label">Kesempatan</span></div>
+      <div class="team-grid">
+        <div class="team-card">
+          <div class="team-card-scanline"></div>
+          <div class="team-avatar">DJ</div>
+          <div class="team-name">Daeng Jamal</div>
+          <div class="team-quote">
+            &ldquo;Jelajahi potensi tak terbatas Domino sebagai ESPORT! ESPORT
+            DOMINO INDONESIA membuka pintu bagi talenta-talenta terbaik untuk
+            bersaing, berkembang, dan menorehkan prestasi di kancah
+            nasional.&rdquo;
+          </div>
+        </div>
+
+        <div class="team-card">
+          <div class="team-card-scanline"></div>
+          <div class="team-avatar">AR</div>
+          <div class="team-name">
+            Abdul Rauf
+          </div>
+          <div class="team-quote">
+            &ldquo;Kami terus berkomitmen untuk menghadirkan platform kompetitif
+            yang adil, transparan, dan menyenangkan bagi seluruh pecinta
+            domino di Indonesia.&rdquo;
+          </div>
+        </div>
+
+        <div class="team-card">
+          <div class="team-card-scanline"></div>
+          <div class="team-avatar">M</div>
+          <div class="team-name">Mursalim</div>
+          <div class="team-quote">
+            &ldquo;Dengan dimulainya musim kompetisi baru berbasis digital,
+            eSPORT DOMINO INDONESIA siap memberikan pengalaman bermain yang
+            lebih seru, kompetitif, dan terstruktur.&rdquo;
+          </div>
+        </div>
+
+        <div class="team-card">
+          <div class="team-card-scanline"></div>
+          <div class="team-avatar">MU</div>
+          <div class="team-name">Muflihuddin, S.E</div>
+          <div class="team-quote">
+            &ldquo;Kami berkomitmen membangun ekosistem eSports yang
+            kompetitif, sehat, dan inklusif&mdash;di mana domino yang berakar
+            budaya kuat menjadi panggung prestasi nasional dan
+            internasional.&rdquo;
+          </div>
+        </div>
+
+        <div class="team-card">
+          <div class="team-card-scanline"></div>
+          <div class="team-avatar">QT</div>
+          <div class="team-name">Qadri Tappi</div>
+          <div class="team-quote">
+            &ldquo;Olahraga Domino di Indonesia merupakan perwujudan
+            nilai-nilai tradisi yang nyata. Kami menghimpun eSPORT Domino
+            Indonesia berlandaskan Pancasila dan UUD 1945.&rdquo;
+          </div>
+        </div>
+
+        <div class="team-card">
+          <div class="team-card-scanline"></div>
+          <div class="team-avatar">MF</div>
+          <div class="team-name">Muhammad Fadel Ibrahim</div>
+          <div class="team-quote">
+            &ldquo;eSPORT DOMINO INDONESIA bukan sekadar platform permainan,
+            tapi wadah berkumpulnya talenta lokal dan pelaku industri yang
+            percaya domino bisa menjadi simbol kekuatan esport
+            nasional.&rdquo;
+          </div>
+        </div>
+
+        <div class="team-card">
+          <div class="team-card-scanline"></div>
+          <div class="team-avatar">BKD</div>
+          <div class="team-name">Bobby Kodrat Dannyal, S.E</div>
+          <div class="team-quote">
+            &ldquo;Sebagai pelopor eSport Domino, kami hadir mengangkat
+            standar kompetisi dan profesionalisme&mdash;memperkenalkan
+            keunikan matematika dalam 28 kartu dan 168 biji domino.&rdquo;
+          </div>
+        </div>
+
+        <div class="team-card">
+          <div class="team-card-scanline"></div>
+          <div class="team-avatar">BW</div>
+          <div class="team-name">Bonie Wijaya</div>
+          <div class="team-quote">
+            &ldquo;Dari rekreasi hingga kompetisi tingkat tinggi, eSPORT
+            DOMINO INDONESIA adalah rumah bagi semua pecinta Domino. Kami
+            menyelenggarakan turnamen dan memajukan ekosistem eSport.&rdquo;
+          </div>
+        </div>
+
+        <div class="team-card">
+          <div class="team-card-scanline"></div>
+          <div class="team-avatar">PV</div>
+          <div class="team-name">Patrio Vincentio</div>
+          <div class="team-quote">
+            &ldquo;eSPORT DOMINO INDONESIA: Membangun komunitas eSport Domino
+            yang dinamis dan kompetitif, menghadirkan pengalaman bermain
+            terbaik bagi para penggemar di seluruh Indonesia.&rdquo;
+          </div>
+        </div>
+
+        <div class="team-card">
+          <div class="team-card-scanline"></div>
+          <div class="team-avatar">MFI</div>
+          <div class="team-name">Muhammad Fachrian Ibrahim</div>
+          <div class="team-quote">
+            &ldquo;Domino sudah menjadi bagian dari keseharian masyarakat
+            kita, dan melalui eSport, kami ingin membawa permainan ini ke
+            level profesional dan diakui secara nasional maupun global.&rdquo;
+          </div>
+        </div>
+
+        <div class="team-card">
+          <div class="team-card-scanline"></div>
+          <div class="team-avatar">DJ</div>
+          <div class="team-name">Drs. Jamaluddin</div>
+          <div class="team-quote">
+            &ldquo;Kami membangun eSport Domino Indonesia dengan keyakinan
+            bahwa game lokal seperti domino punya potensi
+            besar&mdash;membangun ekosistem digital yang inklusif dari pelosok
+            desa hingga kota besar.&rdquo;
+          </div>
+        </div>
+
+        <div class="team-card">
+          <div class="team-card-scanline"></div>
+          <div class="team-avatar">AF</div>
+          <div class="team-name">Ahmad Fuad</div>
+          <div class="team-quote">
+            &ldquo;Kami ingin menghadirkan kompetisi domino digital yang tertib,
+            transparan, dan berkelanjutan agar setiap talenta memiliki jalur
+            prestasi yang jelas.&rdquo;
+          </div>
+        </div>
+
+        <div class="team-card">
+          <div class="team-card-scanline"></div>
+          <div class="team-avatar">MK</div>
+          <div class="team-name">Ir. Muh. Kamsul</div>
+          <div class="team-quote">
+            &ldquo;Melalui eSport Domino Indonesia, permainan domino dapat tumbuh
+            sebagai olahraga digital yang terukur, profesional, dan relevan
+            dengan perkembangan teknologi.&rdquo;
+          </div>
+        </div>
+
+        <div class="team-card">
+          <div class="team-card-scanline"></div>
+          <div class="team-avatar">AS</div>
+          <div class="team-name">Arie Sofyan</div>
+          <div class="team-quote">
+            &ldquo;Komunitas adalah fondasi utama. Kami bergerak untuk menyatukan
+            pemain, penyelenggara, dan daerah dalam ekosistem eSport Domino
+            Indonesia yang solid.&rdquo;
+          </div>
+        </div>
+
+        <div class="team-card">
+          <div class="team-card-scanline"></div>
+          <div class="team-avatar">A</div>
+          <div class="team-name">Ashar</div>
+          <div class="team-quote">
+            &ldquo;Dengan semangat kolaborasi, eSport Domino Indonesia dapat
+            membuka lebih banyak kesempatan bagi pemain lokal untuk tampil
+            dan berprestasi secara nasional.&rdquo;
+          </div>
+        </div>
+
+        <div class="team-card" style="
+              background: rgba(0, 229, 255, 0.04);
+              border-color: rgba(0, 229, 255, 0.2);
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              justify-content: center;
+              min-height: 180px;
+            ">
+          <div style="
+                font-family: var(--display);
+                font-size: 0.55rem;
+                letter-spacing: 0.15em;
+                color: var(--cyan);
+                text-transform: uppercase;
+                margin-bottom: 0.5rem;
+              ">
+            // Bergabung
+          </div>
+          <div style="
+                font-family: var(--heading);
+                font-weight: 700;
+                font-size: 0.9rem;
+                color: var(--white);
+                text-align: center;
+                margin-bottom: 1rem;
+              ">
+            Jadilah Bagian<br />dari Tim kami
+          </div>
+          <button class="btn-primary" style="font-size: 0.55rem; padding: 0.6rem 1.2rem" onclick="
+                document
+                  .getElementById('contact')
+                  .scrollIntoView({ behavior: 'smooth' })
+              ">
+            Hubungi Kami
+          </button>
+        </div>
       </div>
-      <a href="https://api.whatsapp.com/send?phone=6282131531547" target="_blank" class="btn-primary" style="display:inline-block;font-size:.7rem;">
-        Daftar via WhatsApp
-      </a>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- ══ CONTACT ══════════════════════════════════════════════════ -->
-<section id="contact" class="section">
-  <div class="container">
-    <div class="label">// Hubungi Kami</div>
-    <h2 class="section-title" style="margin-bottom:3rem;">Kontak &amp; <span>Informasi</span></h2>
-    <div class="contact-grid">
-      <div class="contact-info">
-        <p>Untuk pertanyaan seputar keanggotaan, sponsorship, kemitraan, atau penyelenggaraan turnamen&mdash;tim kami siap membantu Anda.</p>
-
-        <div class="contact-item">
-          <div class="contact-icon">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+  <!-- ══ ARTICLES ══════════════════════════════════════════════════ -->
+  <section id="articles" class="section">
+    <div class="container">
+      <div class="label">// Info Terkini</div>
+      <h2 class="section-title">Artikel &amp; <span>Berita</span></h2>
+      <p style="color: var(--text-dim); margin-top: 0.75rem; max-width: 60ch">
+        Dapatkan informasi penting seputar pertandingan, turnamen nasional,
+        serta kegiatan offline maupun online.
+      </p>
+      <div class="articles-grid">
+        <a href="https://www.pbesdi.com/esport-indonesia-resmi/" target="_blank" class="article-card">
+          <div class="article-img">&#x25A0;</div>
+          <div class="article-body">
+            <div class="article-date">22 Juli 2025</div>
+            <div class="article-title">
+              Esport Indonesia Resmi: PBESDI sebagai Asosiasi eSport Domino
+              Nasional
+            </div>
+            <span class="article-tag">Resmi</span>
           </div>
-          <div class="contact-detail">
-            <div class="contact-key">Alamat</div>
-            <div class="contact-val">Jl. Raya Cilangkap (Komp The Beige Ruko A6),<br>Jakarta Timur</div>
+        </a>
+        <a href="https://www.pbesdi.com/asosiasi-e-sport-nasional/" target="_blank" class="article-card">
+          <div class="article-img">&#x25A0;</div>
+          <div class="article-body">
+            <div class="article-date">22 Juli 2025</div>
+            <div class="article-title">
+              Asosiasi E-sport Nasional: Visi PBESDI untuk eSport Domino
+              Indonesia
+            </div>
+            <span class="article-tag">Asosiasi</span>
           </div>
-        </div>
-
-        <div class="contact-item">
-          <div class="contact-icon">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.18 2 2 0 0 1 3.6 1h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 8.91a16 16 0 0 0 6 6l.76-.76a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-          </div>
-          <div class="contact-detail">
-            <div class="contact-key">WhatsApp / Telepon</div>
-            <div class="contact-val"><a href="tel:082131531547" style="color:var(--white);">0821&ndash;3153&ndash;1547</a></div>
-          </div>
-        </div>
-
-        <div class="contact-item">
-          <div class="contact-icon">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-          </div>
-          <div class="contact-detail">
-            <div class="contact-key">Email</div>
-            <div class="contact-val"><a href="mailto:admin@pbesdi.com" style="color:var(--white);">admin@pbesdi.com</a></div>
-          </div>
-        </div>
-
-        <div class="social-row">
-          <a href="https://www.instagram.com/" target="_blank" class="social-btn" title="Instagram">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".5" fill="currentColor"/></svg>
-          </a>
-          <a href="https://www.facebook.com/" target="_blank" class="social-btn" title="Facebook">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
-          </a>
-          <a href="https://www.x.com/" target="_blank" class="social-btn" title="X / Twitter">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
-          </a>
-          <a href="https://www.youtube.com/" target="_blank" class="social-btn" title="YouTube">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 0 0-1.95 1.96A29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58A2.78 2.78 0 0 0 3.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.95A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="currentColor" stroke="none"/></svg>
-          </a>
-        </div>
+        </a>
       </div>
-
-      <div>
-        <form class="contact-form" onsubmit="event.preventDefault(); alert('Pesan terkirim! Kami akan segera menghubungi Anda.');">
-          <div class="form-group">
-            <label class="form-label">Nama Lengkap</label>
-            <input type="text" class="form-input" placeholder="Masukkan nama Anda">
-          </div>
-          <div class="form-group">
-            <label class="form-label">Email / WhatsApp</label>
-            <input type="text" class="form-input" placeholder="email@contoh.com atau 08xx">
-          </div>
-          <div class="form-group">
-            <label class="form-label">Keperluan</label>
-            <input type="text" class="form-input" placeholder="Keanggotaan, Sponsorship, Turnamen, dll">
-          </div>
-          <div class="form-group">
-            <label class="form-label">Pesan</label>
-            <textarea class="form-textarea" placeholder="Tuliskan pesan Anda di sini&hellip;"></textarea>
-          </div>
-          <button type="submit" class="form-submit">Kirim Pesan</button>
-        </form>
+      <div style="text-align: center; margin-top: 2.5rem">
+        <a href="https://www.pbesdi.com" target="_blank" class="btn-ghost" style="
+              display: inline-block;
+              padding: 0.75rem 2rem;
+              border: 1px solid rgba(0, 229, 255, 0.3);
+              color: var(--text-dim);
+              font-family: var(--display);
+              font-size: 0.65rem;
+              letter-spacing: 0.12em;
+              text-transform: uppercase;
+              transition:
+                border-color 0.2s,
+                color 0.2s;
+            ">
+          Lihat Semua Artikel &rarr;
+        </a>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- ══ FOOTER ═══════════════════════════════════════════════════ -->
-<footer>
-  <div class="container">
-    <div class="footer-inner">
-      <div class="footer-brand">
-        <div class="footer-logo">
-          <img src="assets/image/android-chrome-192x192.png" alt="PBESDI logo" width="40" height="40">
-          <span>PBESDI &mdash; Esport Domino Indonesia</span>
+  <!-- ══ REGISTER CTA ══════════════════════════════════════════════ -->
+  <section id="register" class="section">
+    <div class="container">
+      <div class="register-inner">
+        <div class="register-glow"></div>
+        <div class="label" style="justify-content: center">
+          // Pendaftaran Anggota &amp; Komunitas Regional
         </div>
-        <p class="footer-tagline">Organisasi profesional yang bergerak di bidang pengembangan, penyelenggaraan, dan pembinaan kompetisi eSport berbasis permainan domino di Indonesia.</p>
-        <div style="margin-top:1.5rem; font-family:var(--display); font-size:.55rem; letter-spacing:.15em; color:var(--text-dim); text-transform:uppercase;">
-          NIB: 2407250002436 &nbsp;&bull;&nbsp; NPWP: 1000 0000 0439 8430
+        <h2 class="register-title">
+          Bergabung dengan
+          <span style="color: var(--cyan)">Komunitas</span> Terbesar
+        </h2>
+        <p class="register-sub">
+          Jadilah bagian dari jaringan komunitas eSport terbesar di Indonesia.
+          Daftarkan dirimu sekarang untuk mendapatkan akses ke berbagai
+          kegiatan, turnamen, dan pembinaan eksklusif di wilayahmu!
+        </p>
+        <div class="register-stats">
+          <div class="reg-stat">
+            <span class="reg-stat-val">5K+</span><span class="reg-stat-label">Member Aktif</span>
+          </div>
+          <div class="reg-stat">
+            <span class="reg-stat-val" style="color: var(--gold)">34</span><span class="reg-stat-label">Provinsi</span>
+          </div>
+          <div class="reg-stat">
+            <span class="reg-stat-val">&#x221E;</span><span class="reg-stat-label">Kesempatan</span>
+          </div>
         </div>
-        <div class="footer-socials" aria-label="Media sosial PBESDI">
-          <a href="" aria-label="Facebook">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14.4 8.2h2.1V4.7c-.4-.1-1.7-.2-3.2-.2-3.2 0-5.3 1.9-5.3 5.5v3.1H4.5V17H8v8h4.2v-8h3.3l.5-3.9h-3.8v-2.7c0-1.1.3-2.2 2.2-2.2Z"/></svg>
-          </a>
-          <a href="" aria-label="Instagram">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.8 2.8h8.4c3 0 5 2 5 5v8.4c0 3-2 5-5 5H7.8c-3 0-5-2-5-5V7.8c0-3 2-5 5-5Zm0 1.8c-2 0-3.2 1.2-3.2 3.2v8.4c0 2 1.2 3.2 3.2 3.2h8.4c2 0 3.2-1.2 3.2-3.2V7.8c0-2-1.2-3.2-3.2-3.2H7.8Zm4.2 3.5a3.9 3.9 0 1 1 0 7.8 3.9 3.9 0 0 1 0-7.8Zm0 1.8a2.1 2.1 0 1 0 0 4.2 2.1 2.1 0 0 0 0-4.2Zm4.4-2.3a1 1 0 1 1 0 2.1 1 1 0 0 1 0-2.1Z"/></svg>
-          </a>
-          <a href="" aria-label="TikTok">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15.2 3.2c.3 2.4 1.7 4 4.1 4.4v3.8a8 8 0 0 1-4.1-1.3v5.9c0 3.2-2.3 5.6-5.6 5.6-3 0-5.2-2-5.2-4.8 0-3 2.4-5 5.7-4.8v3.8c-1.2-.2-2 .2-2 1.1 0 .8.6 1.2 1.4 1.2 1 0 1.7-.6 1.7-2V3.2h4Z"/></svg>
-          </a>
-          <a href="" aria-label="X Twitter">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14.2 10.6 22 2h-4.3l-5.4 6-4.5-6H2l7.5 10L2 22h4.3l5.2-6.6 4.9 6.6H22l-7.8-11.4Zm-2 2.5-1.5-2.1-4-5.6h2l4.5 6.3 1.5 2.2 3.4 4.8h-2l-3.9-5.6Z"/></svg>
-          </a>
-          <a href="" aria-label="LinkedIn">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 8.6h3.5V21H5V8.6Zm1.8-5.7a2 2 0 1 1 0 4.1 2 2 0 0 1 0-4.1Zm4.1 5.7h3.3v1.7c.5-.9 1.7-2 3.7-2 3.7 0 4.4 2.4 4.4 5.5V21h-3.5v-6.3c0-1.5 0-3.3-2-3.3s-2.4 1.6-2.4 3.2V21h-3.5V8.6Z"/></svg>
-          </a>
-        </div>
-      </div>
-      <div>
-        <div class="footer-col-title">Navigasi</div>
-        <ul class="footer-links">
-          <li><a href="#about">Tentang PBESDI</a></li>
-          <li><a href="#vision">Visi &amp; Misi</a></li>
-          <li><a href="#services">Kompetisi</a></li>
-          <li><a href="#team">Pengurus</a></li>
-          <li><a href="#articles">Artikel</a></li>
-          <li><a href="#contact">Kontak</a></li>
-        </ul>
-      </div>
-      <div>
-        <div class="footer-col-title">Kontak</div>
-        <ul class="footer-links">
-          <li><a href="https://api.whatsapp.com/send?phone=6282131531547" target="_blank">WhatsApp</a></li>
-          <li><a href="tel:082131531547">0821&ndash;3153&ndash;1547</a></li>
-          <li><a href="mailto:admin@pbesdi.com">admin@pbesdi.com</a></li>
-          <li style="margin-top:1rem;color:var(--text-dim);font-size:.8rem;">Jl. Raya Cilangkap<br>Komp The Beige Ruko A6<br>Jakarta Timur</li>
-        </ul>
+        <a href="https://api.whatsapp.com/send?phone=6282131531547" target="_blank" class="btn-primary"
+          style="display: inline-block; font-size: 0.7rem">
+          Daftar via WhatsApp
+        </a>
       </div>
     </div>
-    <div class="footer-bottom">
-      <span>&copy;&nbsp;2025 eSport Domino Indonesia (PBESDI). All rights reserved.</span>
-    </div>
-  </div>
-</footer>
+  </section>
 
-<script src="script.js"></script>
+  <!-- ══ CONTACT ══════════════════════════════════════════════════ -->
+  <section id="contact" class="section">
+    <div class="container">
+      <div class="label">// Hubungi Kami</div>
+      <h2 class="section-title" style="margin-bottom: 3rem">
+        Kontak &amp; <span>Informasi</span>
+      </h2>
+      <div class="contact-grid">
+        <div class="contact-info">
+          <p>
+            Untuk pertanyaan seputar keanggotaan, sponsorship, kemitraan, atau
+            penyelenggaraan turnamen&mdash;tim kami siap membantu Anda.
+          </p>
+
+          <div class="contact-item">
+            <div class="contact-icon">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                <circle cx="12" cy="10" r="3" />
+              </svg>
+            </div>
+            <div class="contact-detail">
+              <div class="contact-key">Alamat</div>
+              <div class="contact-val">
+                Jl. Raya Cilangkap (Komp The Beige Ruko A6),<br />Jakarta
+                Timur
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <div class="contact-icon">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path
+                  d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.18 2 2 0 0 1 3.6 1h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 8.91a16 16 0 0 0 6 6l.76-.76a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+              </svg>
+            </div>
+            <div class="contact-detail">
+              <div class="contact-key">WhatsApp / Telepon</div>
+              <div class="contact-val">
+                <a href="tel:082131531547" style="color: var(--white)">0821&ndash;3153&ndash;1547</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <div class="contact-icon">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                <polyline points="22,6 12,13 2,6" />
+              </svg>
+            </div>
+            <div class="contact-detail">
+              <div class="contact-key">Email</div>
+              <div class="contact-val">
+                <a href="mailto:admin@pbesdi.com" style="color: var(--white)">admin@pbesdi.com</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="social-row">
+            <a href="https://www.instagram.com/" target="_blank" class="social-btn" title="Instagram">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                <circle cx="12" cy="12" r="4" />
+                <circle cx="17.5" cy="6.5" r=".5" fill="currentColor" />
+              </svg>
+            </a>
+            <a href="https://www.facebook.com/" target="_blank" class="social-btn" title="Facebook">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+              </svg>
+            </a>
+            <a href="https://www.x.com/" target="_blank" class="social-btn" title="X / Twitter">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+              </svg>
+            </a>
+            <a href="https://www.youtube.com/" target="_blank" class="social-btn" title="YouTube">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path
+                  d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 0 0-1.95 1.96A29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58A2.78 2.78 0 0 0 3.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.95A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z" />
+                <polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="currentColor" stroke="none" />
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <div>
+          <form class="contact-form" onsubmit="
+                event.preventDefault();
+                alert('Pesan terkirim! Kami akan segera menghubungi Anda.');
+              ">
+            <div class="form-group">
+              <label class="form-label">Nama Lengkap</label>
+              <input type="text" class="form-input" placeholder="Masukkan nama Anda" />
+            </div>
+            <div class="form-group">
+              <label class="form-label">Email / WhatsApp</label>
+              <input type="text" class="form-input" placeholder="email@contoh.com atau 08xx" />
+            </div>
+            <div class="form-group">
+              <label class="form-label">Keperluan</label>
+              <input type="text" class="form-input" placeholder="Keanggotaan, Sponsorship, Turnamen, dll" />
+            </div>
+            <div class="form-group">
+              <label class="form-label">Pesan</label>
+              <textarea class="form-textarea" placeholder="Tuliskan pesan Anda di sini&hellip;"></textarea>
+            </div>
+            <button type="submit" class="form-submit">Kirim Pesan</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ FOOTER ═══════════════════════════════════════════════════ -->
+  <footer>
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <img src="assets/image/android-chrome-192x192.png" alt="PBESDI logo" width="40" height="40" />
+            <span>PBESDI &mdash; Esport Domino Indonesia</span>
+          </div>
+          <p class="footer-tagline">
+            Organisasi profesional yang bergerak di bidang pengembangan,
+            penyelenggaraan, dan pembinaan kompetisi eSport berbasis permainan
+            domino di Indonesia.
+          </p>
+          <div style="
+                margin-top: 1.5rem;
+                font-family: var(--display);
+                font-size: 0.55rem;
+                letter-spacing: 0.15em;
+                color: var(--text-dim);
+                text-transform: uppercase;
+              ">
+            NIB: 2407250002436 &nbsp;&bull;&nbsp; NPWP: 1000 0000 0439 8430
+          </div>
+          <div class="footer-socials" aria-label="Media sosial PBESDI">
+            <a href="#" aria-label="Facebook">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                  d="M14.4 8.2h2.1V4.7c-.4-.1-1.7-.2-3.2-.2-3.2 0-5.3 1.9-5.3 5.5v3.1H4.5V17H8v8h4.2v-8h3.3l.5-3.9h-3.8v-2.7c0-1.1.3-2.2 2.2-2.2Z" />
+              </svg>
+            </a>
+            <a href="#" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                  d="M7.8 2.8h8.4c3 0 5 2 5 5v8.4c0 3-2 5-5 5H7.8c-3 0-5-2-5-5V7.8c0-3 2-5 5-5Zm0 1.8c-2 0-3.2 1.2-3.2 3.2v8.4c0 2 1.2 3.2 3.2 3.2h8.4c2 0 3.2-1.2 3.2-3.2V7.8c0-2-1.2-3.2-3.2-3.2H7.8Zm4.2 3.5a3.9 3.9 0 1 1 0 7.8 3.9 3.9 0 0 1 0-7.8Zm0 1.8a2.1 2.1 0 1 0 0 4.2 2.1 2.1 0 0 0 0-4.2Zm4.4-2.3a1 1 0 1 1 0 2.1 1 1 0 0 1 0-2.1Z" />
+              </svg>
+            </a>
+            <a href="#" aria-label="TikTok">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                  d="M15.2 3.2c.3 2.4 1.7 4 4.1 4.4v3.8a8 8 0 0 1-4.1-1.3v5.9c0 3.2-2.3 5.6-5.6 5.6-3 0-5.2-2-5.2-4.8 0-3 2.4-5 5.7-4.8v3.8c-1.2-.2-2 .2-2 1.1 0 .8.6 1.2 1.4 1.2 1 0 1.7-.6 1.7-2V3.2h4Z" />
+              </svg>
+            </a>
+            <a href="#" aria-label="X Twitter">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                  d="M14.2 10.6 22 2h-4.3l-5.4 6-4.5-6H2l7.5 10L2 22h4.3l5.2-6.6 4.9 6.6H22l-7.8-11.4Zm-2 2.5-1.5-2.1-4-5.6h2l4.5 6.3 1.5 2.2 3.4 4.8h-2l-3.9-5.6Z" />
+              </svg>
+            </a>
+            <a href="#" aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                  d="M5 8.6h3.5V21H5V8.6Zm1.8-5.7a2 2 0 1 1 0 4.1 2 2 0 0 1 0-4.1Zm4.1 5.7h3.3v1.7c.5-.9 1.7-2 3.7-2 3.7 0 4.4 2.4 4.4 5.5V21h-3.5v-6.3c0-1.5 0-3.3-2-3.3s-2.4 1.6-2.4 3.2V21h-3.5V8.6Z" />
+              </svg>
+            </a>
+          </div>
+        </div>
+        <div>
+          <div class="footer-col-title">Navigasi</div>
+          <ul class="footer-links">
+            <li><a href="#about">Tentang PBESDI</a></li>
+            <li><a href="#vision">Visi &amp; Misi</a></li>
+            <li><a href="#services">Kompetisi</a></li>
+            <li><a href="#team">Pengurus</a></li>
+            <li><a href="#articles">Artikel</a></li>
+            <li><a href="#contact">Kontak</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-col-title">Kontak</div>
+          <ul class="footer-links">
+            <li>
+              <a href="https://api.whatsapp.com/send?phone=6282131531547" target="_blank">WhatsApp</a>
+            </li>
+            <li><a href="tel:082131531547">0821&ndash;3153&ndash;1547</a></li>
+            <li><a href="mailto:admin@pbesdi.com">admin@pbesdi.com</a></li>
+            <li style="
+                  margin-top: 1rem;
+                  color: var(--text-dim);
+                  font-size: 0.8rem;
+                ">
+              Jl. Raya Cilangkap<br />Komp The Beige Ruko A6<br />Jakarta
+              Timur
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy;&nbsp;2025 eSport Domino Indonesia (PBESDI). All rights
+          reserved.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
+
 </html>

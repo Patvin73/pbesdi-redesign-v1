@@ -686,8 +686,6 @@
   .team-quote {
     font-size: .72rem; color: var(--text-dim);
     line-height: 1.5; font-style: italic;
-    display: -webkit-box; -webkit-line-clamp: 4;
-    -webkit-box-orient: vertical; overflow: hidden;
     margin-top: .5rem;
   }
   .team-card-scanline {
