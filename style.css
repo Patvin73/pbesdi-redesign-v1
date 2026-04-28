@@ -828,6 +828,7 @@
     transition: border-color .2s, color .2s, background .2s;
     text-decoration: none;
   }
+  .social-btn svg { width: 17px; height: 17px; fill: currentColor; }
   .social-btn:hover { border-color: var(--cyan); color: var(--cyan); background: rgba(0,229,255,0.07); }
 
   /* Form */
